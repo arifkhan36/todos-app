@@ -1,0 +1,23 @@
+  <%# as the filename states, this view should render the `index` movie template that lists all movies in the database! %>
+<%# make sure each movie has a button to be deleted from the databse %>
+
+  <% include ../partials/header.ejs %>
+
+
+  <a href="/todos/add">Add todos</a>
+  <% for (let todos of data) { %>
+    <div class='todos'>
+      <h1><%= todos.name %></h1>
+      <h1><%= todos.category %></h1>
+      <h1><%= todos.author %></h1>
+      <a href='/todos/<%= todos.id%>'>Learn more</a>
+
+
+       <form action="/todos/<%= todos.id %>?_method=Delete " method="Post">
+      <input type="Submit" value="Delete"/>
+      </form>
+    </div>
+  <% } %>
+
+  <% include ../partials/footer.ejs %>
+

@@ -1,0 +1,12 @@
+<%# as the filename states, this view should render the `add` todos template %>
+
+<%#include ../partials/header.ejs %>
+
+<form method='POST' action='/todos'>
+  <input name='name' type='text' placeholder='name' />
+  <input name='category' type='text' placeholder='category' />
+  <input name='author' type='text' placeholder='author'>
+  <input type='submit' value='Submit!' />
+</form>
+
+<%# include ../partials/footer.ejs %>
