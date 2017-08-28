@@ -31,7 +31,7 @@ app.listen(port, () => {
 // index route
 app.get('/', (req, res) => {
   res.render('index', {
-    message: "welcome to the world of EJS"
+    message: "welcome to my App"
   })
 });
 

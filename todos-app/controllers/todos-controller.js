@@ -26,7 +26,41 @@ todosController.show = (req, res) => {
       res.status(500).json(err);
     })
 };
+todosController.create = (req, res) => {
+  Todos.create({
+    name: req.body.name,
+    category: req.body.category,
+    author: req.body.author,
+  }).then(todos => {
+    res.redirect('/todos');
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+};
 
+todosController.update = (req, res) => {
+  Todos.update({
+    name: req.body.name,
+    category: req.body.category,
+    author: req.body.author,
+  }, req.params.id).then(todos => {
+    res.redirect('/todos');
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
+};
+
+todosController.delete = (req, res) => {
+  Todos.destroy(req.params.id)
+    .then(() => {
+      res.redirect('/todos');
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+}
 
 
 

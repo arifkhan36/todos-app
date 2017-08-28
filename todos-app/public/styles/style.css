@@ -1,0 +1,22 @@
+body{
+  background-color:#b96464;
+}
+
+input {
+  background-color: purple;
+  height: 20px;
+  width: 75px;
+  color: gold;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: 900;
+  margin:20px 0;
+}
+
+button{
+  color:red;
+}
